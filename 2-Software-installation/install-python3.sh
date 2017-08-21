@@ -2,8 +2,8 @@
 #
 ##################################################################################################################
 # Written to be used on 64 bits computers
-# Author 	: 	Erik Dubois
-# Website 	: 	http://www.erikdubois.be
+# Author 	: 	ppin
+# Website 	: 	http://pepin.xyz
 ##################################################################################################################
 ##################################################################################################################
 #
@@ -12,18 +12,10 @@
 ##################################################################################################################
 
 
-rm /tmp/gitkraken-amd64.deb
+sudo apt install python3 python3-pip python3-markdown pelican
 
-wget https://release.gitkraken.com/linux/gitkraken-amd64.deb -O /tmp/gitkraken-amd64.deb
-sudo dpkg -i /tmp/gitkraken-amd64.deb
-
-rm /tmp/gitkraken-amd64.deb
-
-# echo "fixing hardcoded icon"
-# old="Icon=app"
-# new="Icon=gitkraken"
-# location="/usr/share/applications/gitkraken.desktop"
-# sudo sed -i s/$old/$new/g $location
+alias python="python3"
+alias pip="pip3"
 
 
 echo "################################################################"

@@ -11,38 +11,6 @@
 #
 ##################################################################################################################
 
-###############################################################################################
-
-
-# repo for grub-customizer
-# sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
-
-# repo for numix themes
-#sudo add-apt-repository ppa:numix/ppa -y
-
-# repo for boot-repair
-# sudo add-apt-repository -y ppa:yannubuntu/boot-repair
-
-
-###############################################################################################
-
-# Spotify
-
-# 1. Add the Spotify repository signing key to be able to verify downloaded packages
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
-
-# 2. Add the Spotify repository
-echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-
-# 3. Update list of available packages
-sudo apt-get update
-
-# 4. Install Spotify
-sudo apt-get install spotify-client -y
-
-
-###############################################################################################
-
 # donwloading and installing google chrome for netflix e.g.
 # echo downloading google chrome latest stable edition
 rm google-chrome-stable_current_amd64.deb
@@ -56,43 +24,34 @@ rm google-chrome-stable_current_amd64.deb
 
 ###############################################################################################
 
-# Downloading and installing latest sublime text 3
+# Add external repositories
 
-rm /tmp/sublime-text_build-3126_amd64.deb
+# Sublime text
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 
-wget https://download.sublimetext.com/sublime-text_build-3126_amd64.deb -O /tmp/sublime-text_build-3126_amd64.deb
-sudo dpkg -i /tmp/sublime-text_build-3126_amd64.deb
+# Veracrypt
+sudo add-apt-repository ppa:unit193/encryption
 
-rm /tmp/sublime-text_build-3126_amd64.deb
+# Spotify
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 
-
-###############################################################################################
-
-# Downloading and installing latest variety
-sudo add-apt-repository ppa:peterlevi/ppa -y
-sudo apt-get update
-sudo apt-get install variety -y
 
 ###############################################################################################
 
 #software from 'normal' repositories
-sudo apt-get install -y adobe-flashplugin catfish clementine curl dconf-cli dropbox evolution focuswriter frei0r-plugins geary gimp gpick
-sudo apt-get install -y glances gparted grsync hardinfo inkscape kazam nemo-dropbox
-sudo apt-get install -y openshot pinta ppa-purge radiotray screenruler screenfetch scrot shutter slurm synapse
-sudo apt-get install -y terminator thunar vlc vnstat winbind  
-
-#software out of selection
-
-#sudo apt-get install -y agave skype
+sudo apt-get install -y deluge filezilla network-manager-openvpn-gnome vlc 
+sudo apt-get install -y audacity smart-notifier gsmartcontrol pelican python3 python3-pip
+sudo apt-get install -y gufw unetbootin eom gparted matlab-support curl
 
 
-#software from extra repositories
-#sudo apt-get install -y boot-repair 
-sudo apt-get install -y plank 
 
-#software out of selection
-#sudo apt-get install -y  grub-customizer
-
+sudo apt update
+sudo apt install sublime-text
+sudo apt-get install spotify-client -y
+sudo apt install sublime-text
+sudo apt install -y veracrypt
 
 
 ###############################################################################################
@@ -102,13 +61,19 @@ sudo apt-get install -y p7zip-rar p7zip-full unace unrar zip unzip sharutils rar
 
 ###############################################################################################
 
+# Python3 by default
+alias python="python3"
+alias pip="pip3"
+
+###############################################################################################
+
 #ending
-#mkdir $HOME/Upload
-#sudo apt-get -y update
-#sudo apt-get -f -y install
-#sudo apt-get -y upgrade
-#sudo apt-get -y autoremove
-#sudo apt-get -y autoclean
+
+sudo apt-get -y update
+sudo apt-get -f -y install
+sudo apt-get -y upgrade
+sudo apt-get -y autoremove
+sudo apt-get -y autoclean
 
 
 echo "################################################################"
