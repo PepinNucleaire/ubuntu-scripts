@@ -32,7 +32,7 @@ sudo apt update
 
 sudo apt-get install -y deluge filezilla network-manager-openvpn-gnome vlc 
 sudo apt-get install -y audacity smart-notifier gsmartcontrol pelican python3 python3-pip
-sudo apt-get install -y gufw unetbootin eom gparted matlab-support curl
+sudo apt-get install -y gufw unetbootin eom gparted matlab-support curl git
 
 sudo apt install sublime-text
 sudo apt-get install spotify-client -y
