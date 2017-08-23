@@ -11,19 +11,6 @@
 #
 ##################################################################################################################
 
-# donwloading and installing google chrome for netflix e.g.
-# echo downloading google chrome latest stable edition
-rm google-chrome-stable_current_amd64.deb
-
-echo "downloading google chrome latest stable edition"
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt-get install -y libcurl3
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-
-rm google-chrome-stable_current_amd64.deb
-
-###############################################################################################
-
 # Add external repositories
 
 # Sublime text
@@ -37,17 +24,16 @@ sudo add-apt-repository ppa:unit193/encryption
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 
-
 ###############################################################################################
 
 #software from 'normal' repositories
+
+sudo apt update
+
 sudo apt-get install -y deluge filezilla network-manager-openvpn-gnome vlc 
 sudo apt-get install -y audacity smart-notifier gsmartcontrol pelican python3 python3-pip
 sudo apt-get install -y gufw unetbootin eom gparted matlab-support curl
 
-
-
-sudo apt update
 sudo apt install sublime-text
 sudo apt-get install spotify-client -y
 sudo apt install sublime-text

@@ -12,13 +12,13 @@
 ##################################################################################################################
 
 
-rm /tmp/discord.deb
+rm /tmp/chrome.deb
 
-wget https://dl.discordapp.net/apps/linux/0.0.2/discord-0.0.2.deb -O /tmp/discord.deb
-sudo dpkg -i /tmp/discord.deb
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/chrome.deb
+sudo dpkg -i /tmp/chrome.deb
 
 
-rm /tmp/discord.deb
+rm /tmp/chrome.deb
 
 
 echo "################################################################"
